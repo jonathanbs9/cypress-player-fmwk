@@ -7,9 +7,9 @@ describe("Pruebas Home Page ", () => {
   it("Login de forma satisfactoria ", () => {
     homePage.navigate();
     homePage.clickIniciarSesion();
-    homePage.enterEmailLogin("amcopruebas.aut.arply+amco_50@gmail.com");
+    homePage.enterEmailLogin("amcopruebas.aut.arply+amco_50@********");
     homePage.clickSiguiente();
-    homePage.enterPassword("Player123");
+    homePage.enterPassword("*******");
     homePage.clickSiguientePassword();
   });
 });
