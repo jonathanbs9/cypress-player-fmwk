@@ -3,6 +3,7 @@
     "cypress": "^12.16.0"
   },
   "devDependencies": {
+    "cypress-dotenv": "^2.0.0",
     "cypress-xpath": "^2.0.1"
   }
 }

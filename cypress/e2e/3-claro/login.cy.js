@@ -1,15 +1,26 @@
 import HomePage from "../../pages/homepage";
-//import { HomePage } from "../pages/HomePage";
+import HomeUserPage from "../../pages/HomeUserPage";
 
+const dotenv = require("cypress-dotenv");
 const homePage = new HomePage();
+const homeUserPage = new HomeUserPage();
 
 describe("Pruebas Home Page ", () => {
   it("Login de forma satisfactoria ", () => {
     homePage.navigate();
     homePage.clickIniciarSesion();
-    homePage.enterEmailLogin("amcopruebas.aut.arply+amco_50@********");
+
+    const username = Cypress.env("USER_PROD");
+    cy.log("USERNAME: " + username);
+    const password = Cypress.env("PASSWORD_PROD");
+
+    homePage.enterEmailLogin(username);
     homePage.clickSiguiente();
-    homePage.enterPassword("*******");
+    homePage.enterPassword(password);
     homePage.clickSiguientePassword();
+
+    cy.wait(5000);
+    homeUserPage.clickearEnMenuDesplegable();
+    homeUserPage.clickearEnMisDispositivos();
   });
 });
