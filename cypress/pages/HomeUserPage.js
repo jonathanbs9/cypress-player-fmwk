@@ -8,10 +8,14 @@ class HomeUserPage {
     ).trigger("mouseover");
   }
 
+  clickearEnSuscripcion(){
+    cy.get("ul.dropdown-menu.menu-user a[href='/argentina/home/user.php?micuentafull#micuentadevices']").click();
+  }
+
   clickearEnMisDispositivos() {
-    cy.get(
-      "div.wrap:nth-child(1) div.navMenu--global div.row div.hidden-xs.navMenu--user ul.nav_user.nav.navbar-nav.navbar-right.menuvisible.menu-anonymous.menu_user-top-margin.menu_user-on-hover.add-border.custom-top li.dropdown.nav-logged-user-li ul.dropdown-menu.menu-user:nth-child(3) li:nth-child(3) > a:nth-child(1)"
-    ).click();
+    cy.wait(2000)
+    cy.xpath("//ul[@class='dropdown-menu']//li//a[contains(text(),'Mis Dispositivos')]").click()    
+    //cy.get("ul.dropdown-menu.menu-user a[href='/argentina/home/user.php?micuentafull#micuentadevices']").click();
   }
 }
 
