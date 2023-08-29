@@ -3,24 +3,11 @@ require("cypress-xpath");
 
 class HomePage {
   navigate() {
-    //cy.visit(Cypress.env("homepage_url"))
     cy.visit("https://www.clarovideo.com");
-    //cy.wait(10000);
-
-    /*cy.intercept(
-      "https://mfwkweb-api.clarovideo.net/services/nav/data",
-      (req) => req.destroy()
-    );
-    
-    cy.intercept(
-      "https://mfwkweb-api.clarovideo.net/services/user/isloggedin",
-      (req) => req.destroy()
-    );*/
   }
 
   clickIniciarSesion() {
     cy.xpath("//button[contains(text(),'INICIAR SESIÓN')]").click();
-    //iniciarSesionButton.click();
   }
 
   enterEmailLogin(email) {
@@ -39,8 +26,20 @@ class HomePage {
     cy.xpath("//button[@id='submitPassword']").click();
   }
 
+  clickRegistrate(){
+    cy.xpath("//a[contains(text(),'Registrate')]").click();
+  }
+
   get obtenerMensajeLogin(){
     return cy.xpath("//div[contains(text(),'La contraseña')]")
+  }
+
+  get obtenerMensajeEmail(){
+    return cy.xpath("//div[contains(text(),'Debés completar este campo')]")
+  }
+
+  get obtenerMensajeEmailFormato(){
+    return cy.xpath("//div[contains(text(), 'Ingresá un')]")
   }
 }
 

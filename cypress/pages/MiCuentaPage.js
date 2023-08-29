@@ -14,7 +14,7 @@ class MiCuentaPage{
 
     clickearPrimerBotonSuscripcion(){
         cy.wait(7000)
-        cy.xpath("//a[@id='btn_suscribir']").eq(0).click()
+        cy.xpath("//a[@id='btn_suscribir']").eq(0).scrollIntoView().click()
         //cy.get("#btn_suscribir").eq(1).click();
         
     }

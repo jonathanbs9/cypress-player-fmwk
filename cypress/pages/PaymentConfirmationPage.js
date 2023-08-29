@@ -1,6 +1,4 @@
 /// <reference types="Cypress" />
-
-
 require("cypress-xpath");
 
 class PaymentConfirmationPage{

@@ -1,5 +1,5 @@
 import HomeUserPage from "../../../pages/HomeUserPage"
-import HomePage from "../../../pages/homepage"
+import HomePage from "../../../pages/HomePage"
 
 const homePage = new HomePage()
 const homeUserPage = new HomeUserPage()
@@ -21,8 +21,6 @@ describe("Login Test Suite", () => {
         homePage.clickSiguientePassword();
         
         homeUserPage.obtenerRecomendacionTexto.should("contain.text", claroRecomiendaTexto)
-        
-
     })
 
     it("Usuario no se loguea de forma satisfactoria - password inválido", () =>{
@@ -36,5 +34,24 @@ describe("Login Test Suite", () => {
         homePage.clickSiguientePassword();
         
         homePage.obtenerMensajeLogin.should("contain.text", mensajeEsperado)
+    })
+
+    it("Usuario no se loguea de forma satisfactoria - email vacío", () => {
+        const mensajeEsperado = "Debés completar este campo"
+
+        homePage.clickIniciarSesion();
+        homePage.clickSiguiente();
+        
+        homePage.obtenerMensajeEmail.should("contain.text", mensajeEsperado)
+    })
+
+    it("Usuario no se loguea de forma satisfactoria - email sin formato", () => {
+        const mensajeEsperado = "Ingresá un correo electrónico válido."
+
+        homePage.clickIniciarSesion();
+        homePage.enterEmailLogin("someInvalidFormat")
+        homePage.clickSiguiente();
+
+        homePage.obtenerMensajeEmailFormato.should("contain.text", mensajeEsperado)
     })
 })

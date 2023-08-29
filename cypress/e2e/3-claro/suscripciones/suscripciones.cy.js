@@ -1,4 +1,4 @@
-import HomePage from "../../../pages/homepage";
+import HomePage from "../../../pages/HomePage";
 import HomeUserPage from "../../../pages/HomeUserPage";
 import MiCuentaPage from "../../../pages/MiCuentaPage";
 import PaymentConfirmationPage from "../../../pages/PaymentConfirmationPage";
