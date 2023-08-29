@@ -17,6 +17,10 @@ class HomeUserPage {
     cy.xpath("//ul[@class='dropdown-menu']//li//a[contains(text(),'Mis Dispositivos')]").click()    
     //cy.get("ul.dropdown-menu.menu-user a[href='/argentina/home/user.php?micuentafull#micuentadevices']").click();
   }
+
+  get obtenerRecomendacionTexto(){
+    return cy.xpath("//h4[contains(text(),'recomienda')]")
+  }
 }
 
 export default HomeUserPage;

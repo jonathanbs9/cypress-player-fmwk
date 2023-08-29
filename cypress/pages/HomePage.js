@@ -38,6 +38,10 @@ class HomePage {
   clickSiguientePassword() {
     cy.xpath("//button[@id='submitPassword']").click();
   }
+
+  get obtenerMensajeLogin(){
+    return cy.xpath("//div[contains(text(),'La contraseña')]")
+  }
 }
 
 export default HomePage;
