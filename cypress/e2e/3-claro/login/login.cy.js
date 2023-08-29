@@ -30,10 +30,10 @@ describe("Login Test Suite", () => {
         homePage.clickIniciarSesion();
         homePage.enterEmailLogin(email);
         homePage.clickSiguiente();
-        homePage.enterPassword("Play22");
+        homePage.enterPassword("Play222222");
         homePage.clickSiguientePassword();
         
-        homePage.obtenerMensajeLogin.should("contain.text", mensajeEsperado)
+        homePage.obtenerMensajeLogin.should("contain.text", mensajeEsperado).should("be.visible")
     })
 
     it("Usuario no se loguea de forma satisfactoria - email vacío", () => {
