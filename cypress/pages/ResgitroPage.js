@@ -21,6 +21,23 @@ class RegistroPage {
     ingresarPassword(password){
         cy.xpath("//input[@id='password']").type(password)
     }
+
+    get obtengoElementoAlMenosUnNumero(){
+        return cy.xpath("//div[contains(text(),'Al menos un número')]")
+    }
+
+    get obtengoElementoSinCaracteresEsp(){
+        return cy.xpath("//div[contains(text(),'Sin caracteres')]")
+    }
+
+    get obtengoElementoMayusculasYMinusculas(){
+        return cy.xpath("//div[contains(text(),'Mayúsculas y minúsculas')]")
+    }
+
+    get obtengoElementoOchoMasCaracteres(){
+        return cy.xpath("//div[contains(text(),'8 o más caracteres')]")
+    }
+
 }
 
 export default RegistroPage
