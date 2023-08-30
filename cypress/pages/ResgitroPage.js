@@ -11,7 +11,7 @@ class RegistroPage {
     }
     
     clickSiguiente(){
-        cy.xpath("//button[contains(text(),'SIGUIENTE')]").click()
+        cy.xpath("//button[contains(text(),'SIGUIENTE')]").click({force: true})
     }
 
     get obtenerMensajeRegistroEmail() {
@@ -36,6 +36,10 @@ class RegistroPage {
 
     get obtengoElementoOchoMasCaracteres(){
         return cy.xpath("//div[contains(text(),'8 o más caracteres')]")
+    }
+
+    get obtengoDebesCompletarEsteCampo(){
+        return cy.xpath("//div[contains(text(),'Debés completar este campo')]")
     }
 
 }

@@ -26,6 +26,10 @@ class HomePage {
     cy.xpath("//button[@id='submitPassword']").click();
   }
 
+  clickBotonRegistrate() {
+    cy.xpath("//button[contains(text(),'REGISTRATE')]").click()
+  }
+  
   clickRegistrate(){
     cy.xpath("//a[contains(text(),'Registrate')]").click();
   }
