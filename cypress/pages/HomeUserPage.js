@@ -21,6 +21,11 @@ class HomeUserPage {
   get obtenerRecomendacionTexto(){
     return cy.xpath("//h4[contains(text(),'recomienda')]")
   }
+
+  clickearEnMiPerfil() {
+    cy.xpath("//a[contains(text(),'perfil')]").click()
+  }
+
 }
 
 export default HomeUserPage;
